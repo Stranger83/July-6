@@ -10,7 +10,7 @@ namespace ArrayManipulator
 	{
 		static void Main(string[] args)
 		{
-			var arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
+			var arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 
 			while (true)
 			{
@@ -19,7 +19,7 @@ namespace ArrayManipulator
 				{
 					break;
 				}
-				var tokens = line.Split();
+				var tokens = line.Split(' ');
 				var command = tokens[0];
 				ProcessCommand(command, tokens, arr);
 			}
@@ -45,7 +45,7 @@ namespace ArrayManipulator
 			else if (command == "first" || command == "last")
 			{
 				var count = int.Parse(tokens[1]);
-				if (count > arr.Length)
+				if (count > arr.Length || count < 0)
 				{
 					Console.WriteLine("Invalid count");
 					return;
@@ -62,7 +62,7 @@ namespace ArrayManipulator
 			{
 				var resultFirstEven = new List<int>();
 				int i = 0;
-				while (resultFirstEven.Count < count && i <= arr.Length - 1)
+				while (resultFirstEven.Count < count && i < arr.Length)
 				{
 					if (arr[i] % 2 == 0)
 					{
@@ -70,28 +70,18 @@ namespace ArrayManipulator
 					}
 					i++;
 				}
-				if (resultFirstEven.Count == 0)
-				{
-					Console.WriteLine("[]");
-					return;
-				}
 				Console.WriteLine("[{0}]", string.Join(", ", resultFirstEven));
 			} else if (command == "first" && everOrOdd == "odd")
 			{
 				var resultFirstOdd = new List<int>();
 				int i = 0;
-				while (resultFirstOdd.Count < count && i <= arr.Length - 1)
+				while (resultFirstOdd.Count < count && i < arr.Length)
 				{
 					if (arr[i] % 2 != 0)
 					{
 						resultFirstOdd.Add(arr[i]);
 					}
 					i++;
-				}
-				if (resultFirstOdd.Count == 0)
-				{
-					Console.WriteLine("[]");
-					return;
 				}
 				Console.WriteLine("[{0}]", string.Join(", ", resultFirstOdd));
 			}
@@ -107,11 +97,7 @@ namespace ArrayManipulator
 					}
 					i--;
 				}
-				if (resultLastOdd.Count == 0)
-				{
-					Console.WriteLine("[]");
-					return;
-				}
+				resultLastOdd.Reverse();
 				Console.WriteLine("[{0}]", string.Join(", ", resultLastOdd));
 			}
 			else if (command == "last" && everOrOdd == "even")
@@ -126,11 +112,7 @@ namespace ArrayManipulator
 					}
 					i--;
 				}
-				if (resultLastEven.Count == 0)
-				{
-					Console.WriteLine("[]");
-					return;
-				}
+				resultLastEven.Reverse();
 				Console.WriteLine("[{0}]", string.Join(", ", resultLastEven));
 			}
 		}

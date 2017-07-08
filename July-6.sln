@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetDessert", "SweetDesser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballLeague", "FootballLeague\FootballLeague.csproj", "{013788E8-1DDC-4721-893D-A58D6DE169BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubicMessages", "CubicMessages\CubicMessages.csproj", "{EBC72649-2BA8-4731-BC97-14E9EC2368A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{013788E8-1DDC-4721-893D-A58D6DE169BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013788E8-1DDC-4721-893D-A58D6DE169BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013788E8-1DDC-4721-893D-A58D6DE169BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC72649-2BA8-4731-BC97-14E9EC2368A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC72649-2BA8-4731-BC97-14E9EC2368A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC72649-2BA8-4731-BC97-14E9EC2368A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC72649-2BA8-4731-BC97-14E9EC2368A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
